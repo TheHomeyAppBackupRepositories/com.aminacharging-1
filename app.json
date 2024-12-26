@@ -1,0 +1,944 @@
+{
+  "_comment": "This file is generated. Please edit .homeycompose/app.json instead.",
+  "id": "com.aminacharging",
+  "version": "2.0.1",
+  "compatibility": ">=12.0.0",
+  "sdk": 3,
+  "platforms": [
+    "local",
+    "cloud"
+  ],
+  "name": {
+    "en": "amina"
+  },
+  "brandColor": "#100F0F",
+  "description": {
+    "en": "Power up your smart home with amina S"
+  },
+  "category": [
+    "energy"
+  ],
+  "permissions": [],
+  "images": {
+    "small": "/assets/images/small.png",
+    "large": "/assets/images/large.png",
+    "xlarge": "/assets/images/xlarge.png"
+  },
+  "author": {
+    "name": "Amina Charging AS"
+  },
+  "support": "mailto:homey-amina@drenso.nl",
+  "flow": {
+    "triggers": [
+      {
+        "title": {
+          "en": "Alarm is resolved"
+        },
+        "titleFormatted": {
+          "en": "[[description]] alarm is resolved"
+        },
+        "args": [
+          {
+            "name": "description",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "any",
+                "title": {
+                  "en": "Any"
+                }
+              },
+              {
+                "id": "acLeakage",
+                "title": {
+                  "en": "AC leakage detected"
+                }
+              },
+              {
+                "id": "carCommunicationError",
+                "title": {
+                  "en": "Car communication error"
+                }
+              },
+              {
+                "id": "chargerProcessingError",
+                "title": {
+                  "en": "Internal error"
+                }
+              },
+              {
+                "id": "dcLeakage",
+                "title": {
+                  "en": "DC leakage detected"
+                }
+              },
+              {
+                "id": "derating",
+                "title": {
+                  "en": "Charge current derated"
+                }
+              },
+              {
+                "id": "overcurrentCritical",
+                "title": {
+                  "en": "Critical overcurrent detected"
+                }
+              },
+              {
+                "id": "overcurrentWarning",
+                "title": {
+                  "en": "Overcurrent detected"
+                }
+              },
+              {
+                "id": "overvoltageWarning",
+                "title": {
+                  "en": "Overvoltage detected"
+                }
+              },
+              {
+                "id": "relayWelded",
+                "title": {
+                  "en": "Relay(s) welded together"
+                }
+              },
+              {
+                "id": "tempError",
+                "title": {
+                  "en": "High temperature detected"
+                }
+              },
+              {
+                "id": "undervoltageWarning",
+                "title": {
+                  "en": "Undervoltage detected"
+                }
+              },
+              {
+                "id": "voltageBalanceWrong",
+                "title": {
+                  "en": "Voltage installation incorrect"
+                }
+              }
+            ],
+            "title": {
+              "en": "Description"
+            }
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "description",
+            "type": "string",
+            "title": {
+              "en": "Alarm description"
+            },
+            "example": {
+              "en": "Overcurrent detected"
+            }
+          }
+        ],
+        "id": "alarm_resolved"
+      },
+      {
+        "title": {
+          "en": "Alarm is triggered"
+        },
+        "titleFormatted": {
+          "en": "[[description]] alarm is triggered"
+        },
+        "args": [
+          {
+            "name": "description",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "any",
+                "title": {
+                  "en": "Any"
+                }
+              },
+              {
+                "id": "acLeakage",
+                "title": {
+                  "en": "AC leakage detected"
+                }
+              },
+              {
+                "id": "carCommunicationError",
+                "title": {
+                  "en": "Car communication error"
+                }
+              },
+              {
+                "id": "chargerProcessingError",
+                "title": {
+                  "en": "Internal error"
+                }
+              },
+              {
+                "id": "dcLeakage",
+                "title": {
+                  "en": "DC leakage detected"
+                }
+              },
+              {
+                "id": "derating",
+                "title": {
+                  "en": "Charge current derated"
+                }
+              },
+              {
+                "id": "overcurrentCritical",
+                "title": {
+                  "en": "Critical overcurrent detected"
+                }
+              },
+              {
+                "id": "overcurrentWarning",
+                "title": {
+                  "en": "Overcurrent detected"
+                }
+              },
+              {
+                "id": "overvoltageWarning",
+                "title": {
+                  "en": "Overvoltage detected"
+                }
+              },
+              {
+                "id": "relayWelded",
+                "title": {
+                  "en": "Relay(s) welded together"
+                }
+              },
+              {
+                "id": "tempError",
+                "title": {
+                  "en": "High temperature detected"
+                }
+              },
+              {
+                "id": "undervoltageWarning",
+                "title": {
+                  "en": "Undervoltage detected"
+                }
+              },
+              {
+                "id": "voltageBalanceWrong",
+                "title": {
+                  "en": "Voltage installation incorrect"
+                }
+              }
+            ],
+            "title": {
+              "en": "Description"
+            }
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "description",
+            "type": "string",
+            "title": {
+              "en": "Alarm description"
+            },
+            "example": {
+              "en": "Overcurrent detected"
+            }
+          }
+        ],
+        "id": "alarm_triggered"
+      },
+      {
+        "title": {
+          "en": "Charging is disabled"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "charging_enabled_false"
+      },
+      {
+        "title": {
+          "en": "Charging is enabled"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "charging_enabled_true"
+      },
+      {
+        "title": {
+          "en": "Charging is no longer paused"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "charging_paused_false"
+      },
+      {
+        "title": {
+          "en": "Charging is paused"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "charging_paused_true"
+      },
+      {
+        "title": {
+          "en": "EV is disconnected"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "ev_connected_false"
+      },
+      {
+        "title": {
+          "en": "EV is connected"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "ev_connected_true"
+      },
+      {
+        "title": {
+          "en": "Last session consumption changed"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "last_session_energy",
+            "title": {
+              "en": "Last session consumption (kWh)"
+            },
+            "type": "number",
+            "example": "1.23"
+          }
+        ],
+        "id": "last_session_energy_changed"
+      },
+      {
+        "title": {
+          "en": "Power delivery stopped"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "power_delivered_false"
+      },
+      {
+        "title": {
+          "en": "Power delivery started"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "power_delivered_true"
+      },
+      {
+        "title": {
+          "en": "Total energy consumption changed"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "tokens": [
+          {
+            "name": "total_energy",
+            "title": {
+              "en": "Total energy consumption (kWh)"
+            },
+            "type": "number",
+            "example": "1.23"
+          }
+        ],
+        "id": "total_energy_changed"
+      }
+    ],
+    "conditions": [
+      {
+        "title": {
+          "en": "Alarm !{{is|isn't}} triggered"
+        },
+        "titleFormatted": {
+          "en": "[[description]] alarm !{{is|isn't}} triggered"
+        },
+        "args": [
+          {
+            "name": "description",
+            "type": "dropdown",
+            "values": [
+              {
+                "id": "any",
+                "title": {
+                  "en": "Any"
+                }
+              },
+              {
+                "id": "acLeakage",
+                "title": {
+                  "en": "AC leakage detected"
+                }
+              },
+              {
+                "id": "carCommunicationError",
+                "title": {
+                  "en": "Car communication error"
+                }
+              },
+              {
+                "id": "chargerProcessingError",
+                "title": {
+                  "en": "Internal error"
+                }
+              },
+              {
+                "id": "dcLeakage",
+                "title": {
+                  "en": "DC leakage detected"
+                }
+              },
+              {
+                "id": "derating",
+                "title": {
+                  "en": "Charge current derated"
+                }
+              },
+              {
+                "id": "overcurrentCritical",
+                "title": {
+                  "en": "Critical overcurrent detected"
+                }
+              },
+              {
+                "id": "overcurrentWarning",
+                "title": {
+                  "en": "Overcurrent detected"
+                }
+              },
+              {
+                "id": "overvoltageWarning",
+                "title": {
+                  "en": "Overvoltage detected"
+                }
+              },
+              {
+                "id": "relayWelded",
+                "title": {
+                  "en": "Relay(s) welded together"
+                }
+              },
+              {
+                "id": "tempError",
+                "title": {
+                  "en": "High temperature detected"
+                }
+              },
+              {
+                "id": "undervoltageWarning",
+                "title": {
+                  "en": "Undervoltage detected"
+                }
+              },
+              {
+                "id": "voltageBalanceWrong",
+                "title": {
+                  "en": "Voltage installation incorrect"
+                }
+              }
+            ],
+            "title": {
+              "en": "Description"
+            }
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "alarm_triggered"
+      },
+      {
+        "title": {
+          "en": "Charging is !{{enabled|disabled}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "charging_enabled"
+      },
+      {
+        "title": {
+          "en": "Charging is !{{paused|not paused}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "charging_paused"
+      },
+      {
+        "title": {
+          "en": "EV is !{{connected|disconnected}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "ev_connected"
+      },
+      {
+        "title": {
+          "en": "Power is !{{being delivered|not being delivered}}"
+        },
+        "args": [
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "power_delivered"
+      }
+    ],
+    "actions": [
+      {
+        "title": {
+          "en": "Set maximum charging current"
+        },
+        "titleFormatted": {
+          "en": "Set maximum charging current to [[max]] A"
+        },
+        "args": [
+          {
+            "name": "max",
+            "type": "number",
+            "placeholder": {
+              "en": "Current in ampere"
+            },
+            "title": {
+              "en": "Maximum current"
+            }
+          },
+          {
+            "name": "device",
+            "type": "device",
+            "filter": "driver_id=amina-s"
+          }
+        ],
+        "id": "set_charging_current"
+      }
+    ]
+  },
+  "drivers": [
+    {
+      "name": {
+        "en": "Amina S"
+      },
+      "class": "evcharger",
+      "capabilities": [
+        "onoff",
+        "ev_connected",
+        "charging_enabled",
+        "power_delivered",
+        "charging_paused",
+        "measure_power",
+        "total_energy",
+        "last_session_energy",
+        "measure_voltage.phase_a",
+        "measure_voltage.phase_b",
+        "measure_voltage.phase_c",
+        "measure_current.phase_a",
+        "measure_current.phase_b",
+        "measure_current.phase_c",
+        "measure_power.phase_a",
+        "measure_power.phase_b",
+        "measure_power.phase_c",
+        "alarm_status",
+        "alarm_description"
+      ],
+      "capabilitiesOptions": {
+        "measure_current": {
+          "title": {
+            "en": "Total Current"
+          }
+        },
+        "measure_current.phase_a": {
+          "title": {
+            "en": "Current Phase A"
+          }
+        },
+        "measure_current.phase_b": {
+          "title": {
+            "en": "Current Phase B"
+          }
+        },
+        "measure_current.phase_c": {
+          "title": {
+            "en": "Current Phase C"
+          }
+        },
+        "measure_power": {
+          "title": {
+            "en": "Immediate energy consumption"
+          },
+          "icon": "/assets/capabilities/immediate_energy.svg"
+        },
+        "measure_power.phase_a": {
+          "title": {
+            "en": "Power Phase A"
+          },
+          "icon": "/assets/capabilities/immediate_energy.svg"
+        },
+        "measure_power.phase_b": {
+          "title": {
+            "en": "Power Phase B"
+          },
+          "icon": "/assets/capabilities/immediate_energy.svg"
+        },
+        "measure_power.phase_c": {
+          "title": {
+            "en": "Power Phase C"
+          },
+          "icon": "/assets/capabilities/immediate_energy.svg"
+        },
+        "measure_voltage": {
+          "title": {
+            "en": "Mean Voltage"
+          }
+        },
+        "measure_voltage.phase_a": {
+          "title": {
+            "en": "Voltage Phase A"
+          }
+        },
+        "measure_voltage.phase_b": {
+          "title": {
+            "en": "Voltage Phase B"
+          }
+        },
+        "measure_voltage.phase_c": {
+          "title": {
+            "en": "Voltage Phase C"
+          }
+        }
+      },
+      "platforms": [
+        "local",
+        "cloud"
+      ],
+      "connectivity": [
+        "zigbee"
+      ],
+      "images": {
+        "small": "/drivers/amina-s/assets/images/small.png",
+        "large": "/drivers/amina-s/assets/images/large.png",
+        "xlarge": "/drivers/amina-s/assets/images/xlarge.png"
+      },
+      "zigbee": {
+        "manufacturerName": "amina distribution AS",
+        "productId": [
+          "amina S"
+        ],
+        "learnmode": {
+          "image": "/drivers/amina-s/assets/icon.svg",
+          "instruction": {
+            "en": "Your charger should be in pairing mode when powered on. If not, power the charger down using the circuit breaker, rotate the current selector to 0, power on, wait for a slow paced white blink, power down, return the current selector to the original position and power on again."
+          }
+        },
+        "endpoints": {
+          "10": {
+            "clusters": [
+              0,
+              3,
+              6,
+              8,
+              2820,
+              65255
+            ],
+            "bindings": [
+              3,
+              6,
+              8,
+              2820,
+              65255
+            ]
+          }
+        }
+      },
+      "id": "amina-s",
+      "settings": [
+        {
+          "id": "maxCurrent",
+          "type": "number",
+          "label": {
+            "en": "Maximum charging current"
+          },
+          "value": 32,
+          "min": 6,
+          "max": 32,
+          "step": 1,
+          "units": {
+            "en": "A"
+          }
+        },
+        {
+          "id": "enableOffline",
+          "type": "checkbox",
+          "label": {
+            "en": "Enable offline mode"
+          },
+          "hint": {
+            "en": "Enable offline mode when connection to the network is lost."
+          },
+          "value": false
+        },
+        {
+          "id": "offlineCurrent",
+          "type": "number",
+          "label": {
+            "en": "Maximum offline current"
+          },
+          "hint": {
+            "en": "Maximum current when the charger is in offline mode."
+          },
+          "value": 32,
+          "min": 6,
+          "max": 32,
+          "step": 1,
+          "units": {
+            "en": "A"
+          }
+        },
+        {
+          "id": "timeToOffline",
+          "type": "number",
+          "label": {
+            "en": "Time to offline mode"
+          },
+          "hint": {
+            "en": "Time until charger will behave as offline after the connection has been lost."
+          },
+          "value": 60,
+          "min": 0,
+          "max": 65535,
+          "step": 1,
+          "units": {
+            "en": "s"
+          }
+        },
+        {
+          "type": "group",
+          "label": {
+            "en": "Device information"
+          },
+          "children": [
+            {
+              "id": "serial",
+              "type": "label",
+              "label": {
+                "en": "Serial number"
+              },
+              "value": "Unknown"
+            },
+            {
+              "id": "firmware_version",
+              "type": "label",
+              "label": {
+                "en": "Firmware version"
+              },
+              "value": "Unknown"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "capabilities": {
+    "alarm_description": {
+      "type": "string",
+      "title": {
+        "en": "Alarm description"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/alarm.svg"
+    },
+    "alarm_status": {
+      "type": "boolean",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "title": {
+        "en": "Alarm status"
+      },
+      "icon": "/assets/capabilities/alarm.svg"
+    },
+    "charging_enabled": {
+      "type": "boolean",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "title": {
+        "en": "Charging enabled"
+      },
+      "icon": "/assets/capabilities/charging_enabled.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Charging is enabled"
+      },
+      "insightsTitleFalse": {
+        "en": "Charging is disabled"
+      }
+    },
+    "charging_paused": {
+      "type": "boolean",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "title": {
+        "en": "Charging paused"
+      },
+      "icon": "/assets/capabilities/charging_paused.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Charging is paused"
+      },
+      "insightsTitleFalse": {
+        "en": "Charging is no longer paused"
+      }
+    },
+    "ev_connected": {
+      "type": "boolean",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "title": {
+        "en": "EV connected"
+      },
+      "icon": "/assets/capabilities/ev_status.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "EV is connected"
+      },
+      "insightsTitleFalse": {
+        "en": "EV is disconnected"
+      }
+    },
+    "last_session_energy": {
+      "type": "number",
+      "title": {
+        "en": "Last session consumption"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/last_session_energy.svg",
+      "units": {
+        "en": "kWh"
+      },
+      "decimals": 3,
+      "insights": true
+    },
+    "power_delivered": {
+      "type": "boolean",
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "title": {
+        "en": "Power being delivered"
+      },
+      "icon": "/assets/capabilities/immediate_energy.svg",
+      "insights": true,
+      "insightsTitleTrue": {
+        "en": "Power delivery started"
+      },
+      "insightsTitleFalse": {
+        "en": "Power delivery stopped"
+      }
+    },
+    "total_energy": {
+      "type": "number",
+      "title": {
+        "en": "Total energy consumption"
+      },
+      "getable": true,
+      "setable": false,
+      "uiComponent": "sensor",
+      "icon": "/assets/capabilities/total_energy.svg",
+      "units": {
+        "en": "kWh"
+      },
+      "decimals": 3,
+      "insights": true
+    }
+  }
+}

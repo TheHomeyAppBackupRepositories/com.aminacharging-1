@@ -1,0 +1,22 @@
+{
+  "error": {
+    "current_more_than_max": "You cannot set the current higher than __maxCurrent__ A",
+    "current_smaller_than_min": "You cannot set a lower current than 6A, as that will pause charging",
+    "firmware_update_needed": "To use this device, please update your firmware to at least __version__! We recommend version __recommended__ or newer."
+  },
+  "alarm": {
+    "derating": "Charge current derated, high temperature",
+    "no_alarm": "N/A",
+    "acLeakage": "AC leakage detected, check car connection",
+    "carCommunicationError": "Car communication error, check connection",
+    "chargerProcessingError": "Internal error, check firmware update",
+    "dcLeakage": "DC leakage detected, check car connection",
+    "overcurrentCritical": "Critical overcurrent detected",
+    "overcurrentWarning": "Overcurrent detected",
+    "overvoltageWarning": "Overvoltage detected",
+    "relayWelded": "Relay(s) welded together, replace product",
+    "tempError": "High temperature detected, check connection",
+    "undervoltageWarning": "Undervoltage detected",
+    "voltageBalanceWrong": "Voltage installation incorrect, contact installer"
+  }
+}
